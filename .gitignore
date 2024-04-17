@@ -1,0 +1,28 @@
+# Unity generated
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# macOS
+.DS_Store
+
+# Unity
+/*.log
+/*.pid
+/*.bak
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# User-specific files
+*.userprefs
+
+# Steamworks
+/steamworks_sdk/
