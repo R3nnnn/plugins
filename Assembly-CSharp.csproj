@@ -61,8 +61,12 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.6f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\VolumeSettings.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Simon.cs" />
+    <Compile Include="Assets\Scripts\Brillo.cs" />
+    <Compile Include="Assets\Scripts\PlayerCam.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -63,18 +63,16 @@ public class simondice : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene(3);
-                // Reiniciar la secuencia si se presiona una tecla incorrecta
-                //currentStep = 0;
+                SceneManager.LoadScene(5);
+                
             }
 
             // Comprobar si se completó la secuencia
             if (currentStep == rand.Count)
             {
-                Debug.Log("Secuencia completada");
+                SceneManager.LoadScene(4);
                 
-                currentStep = 0;
-                StartCoroutine(corutinaTiempo()); // Iniciar una nueva secuencia
+                //currentStep = 0;
             }
         }
     }
