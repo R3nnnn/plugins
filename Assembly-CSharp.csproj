@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Simon.cs" />
     <Compile Include="Assets\Scripts\Brillo.cs" />
     <Compile Include="Assets\Scripts\PlayerCam.cs" />
+    <Compile Include="Assets\Scripts\ExitScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
