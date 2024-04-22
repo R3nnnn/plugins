@@ -1,97 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class simondice : MonoBehaviour
 {
     public List<GameObject> teclas;
-    public List<GameObject> rand;
-    public List<int> Toques;
     public Material tecla1;
     public Material tecla2;
 
+    private List<GameObject> secuencia = new List<GameObject>();
     private int currentStep = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(corutinaTiempo());
+        StartCoroutine(CorutinaTiempo());
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Detectar las teclas presionadas por el usuario
+
         if (Input.anyKeyDown)
         {
-            // Comprobar si la tecla presionada coincide con la siguiente en la secuencia
-            if (Input.GetKeyDown(KeyCode.Alpha1) && rand[currentStep] == teclas[0])
-            {
-                Debug.Log("Tecla 1 presionada");
-                currentStep++;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2) && rand[currentStep] == teclas[1])
-            {
-                Debug.Log("Tecla 2 presionada");
-                currentStep++;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3) && rand[currentStep] == teclas[2])
-            {
-                Debug.Log("Tecla 3 presionada");
-                currentStep++;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha4) && rand[currentStep] == teclas[3])
-            {
-                Debug.Log("Tecla 4 presionada");
-                currentStep++;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha5) && rand[currentStep] == teclas[4])
-            {
-                Debug.Log("Tecla 5 presionada");
-                currentStep++;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha6) && rand[currentStep] == teclas[5])
-            {
-                Debug.Log("Tecla 6 presionada");
-                currentStep++;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha7) && rand[currentStep] == teclas[6])
-            {
-                Debug.Log("Tecla 7 presionada");
-                currentStep++;
-            }
-            else
-            {
-                SceneManager.LoadScene(5);
-                
-            }
+            SimonD();
+        }
 
-            // Comprobar si se completó la secuencia
-            if (currentStep == rand.Count)
-            {
-                SceneManager.LoadScene(4);
-                
-                //currentStep = 0;
-            }
+        if (currentStep == secuencia.Count)
+        {
+            SceneManager.LoadScene(4);
         }
     }
 
-    IEnumerator corutinaTiempo()
+    void SimonD() //Verifica si el jugador ha completado la secuencia
     {
-        rand.Clear();
+        if (currentStep < secuencia.Count)
+        {
 
+            for (int i = 0; i < teclas.Count; i++)
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1 + i) && teclas[i] == secuencia[currentStep])
+                {
+                    Debug.Log("Tecla " + (i + 1) + " presionada");
+                    currentStep++;
+                    return; // Sale del bucle cuando encuentra la tecla correcta
+                }
+                else
+                {
+                    ContadorVidas.scoreCount -= 1;
+                }
+            }
+
+            // Si no se encontró ninguna tecla correcta se va a gameover
+
+            SceneManager.LoadScene(5);
+        }
+    }
+
+    IEnumerator CorutinaTiempo()
+    {
         for (int i = 0; i < 5; i++)
         {
-            int RandomNumber = Random.Range(0, 7);
-            teclas[RandomNumber].GetComponent<MeshRenderer>().material.color = Color.green;
-            teclas[RandomNumber].GetComponent<MeshRenderer>().material = tecla1;
-            teclas[RandomNumber].GetComponent<AudioSource>().Play();
+            int randomIndex = Random.Range(0, teclas.Count);
+            GameObject tecla = teclas[randomIndex];
+            secuencia.Add(tecla);
+
+            tecla.GetComponent<MeshRenderer>().material = tecla1;
+            tecla.GetComponent<AudioSource>().Play();
             yield return new WaitForSeconds(1);
-            teclas[RandomNumber].GetComponent<MeshRenderer>().material.color = Color.white;
-            teclas[RandomNumber].GetComponent<MeshRenderer>().material = tecla2;
+
+            tecla.GetComponent<MeshRenderer>().material = tecla2;
             yield return new WaitForSeconds(1);
-            rand.Add(teclas[RandomNumber]);
         }
     }
 }
