@@ -48,15 +48,18 @@ public class simondice : MonoBehaviour
                     currentStep++;
                     return; // Sale del bucle cuando encuentra la tecla correcta
                 }
-                else
-                {
-                    ContadorVidas.scoreCount -= 1;
-                }
+                
             }
 
             // Si no se encontró ninguna tecla correcta se va a gameover
 
-            SceneManager.LoadScene(5);
+            ContadorVidas.scoreCount -= 1;
+            print("menos vida");
+            SceneManager.LoadScene(2);
+            if (ContadorVidas.scoreCount == 0)
+            {
+                SceneManager.LoadScene(5);
+            }
         }
     }
 
