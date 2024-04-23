@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Effects Pro\Demo\Demo.cs" />
     <Compile Include="Assets\Scripts\VolumeSettings.cs" />
+    <Compile Include="Assets\Scripts\FirstPersonCamera.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\ContadorVidas.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Scripts\Brillo.cs" />
     <Compile Include="Assets\Scripts\ExitScene.cs" />
     <Compile Include="Assets\Effects Pro\Scripts\Effects.cs" />
+    <Compile Include="Assets\FirstPersonMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
