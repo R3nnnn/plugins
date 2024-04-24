@@ -62,16 +62,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\LoseScene.cs" />
+    <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Effects Pro\Demo\Demo.cs" />
     <Compile Include="Assets\Scripts\VolumeSettings.cs" />
     <Compile Include="Assets\Scripts\FirstPersonCamera.cs" />
+    <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\ContadorVidas.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Simon.cs" />
+    <Compile Include="Assets\Scripts\enemyAIPatrol.cs" />
+    <Compile Include="Assets\Scripts\Colision.cs" />
     <Compile Include="Assets\Scripts\Brillo.cs" />
     <Compile Include="Assets\Scripts\ExitScene.cs" />
-    <Compile Include="Assets\enemyAIPatrol.cs" />
     <Compile Include="Assets\Effects Pro\Scripts\Effects.cs" />
     <Compile Include="Assets\Scripts\FirstPersonMovement.cs" />
   </ItemGroup>

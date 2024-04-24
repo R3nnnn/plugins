@@ -7,6 +7,19 @@ public class LoseScene : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(3);
+        if(other.gameObject.name == "kolona")
+        {
+            SceneManager.LoadScene(3);
+        }
+
+        if (other.gameObject.name == "Monstruo")
+        {
+            SceneManager.LoadScene(2);
+        }
+
+        if (other.gameObject.name == "Monstruo")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
