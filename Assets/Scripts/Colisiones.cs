@@ -3,23 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoseScene : MonoBehaviour
+public class Colisiones : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "kolona")
         {
-            SceneManager.LoadScene(3);
-        }
-
-        if (other.gameObject.name == "Monstruo")
-        {
             SceneManager.LoadScene(2);
         }
 
-        if (other.gameObject.name == "Monstruo")
+        if (other.gameObject.name == "Monstruo" || other.gameObject.name == "Monstruo (1)" || other.gameObject.name == "Monstruo (2)" /*|| other.gameObject.name == "Monstruo (3)" || other.gameObject.name == "Monstruo (4)"*/)
         {
-            Destroy(other.gameObject);
+            SceneManager.LoadScene(3);
         }
     }
 }

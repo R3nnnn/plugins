@@ -6,14 +6,23 @@ public class Gun : MonoBehaviour
 {
     public Transform BulletSpawn;
     public GameObject bulletPrefab;
-    public float bulletSpeed = 10;
+    public float bulletSpeed = 200;
+
+    AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
-        if(Input.GetKeyUp(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
-            var bullet = Instantiate(bulletPrefab, BulletSpawn.position, BulletSpawn.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = BulletSpawn.forward * bulletSpeed;
+            GameObject bullet = Instantiate(bulletPrefab, BulletSpawn.position, BulletSpawn.rotation);
+            bullet.GetComponent<Rigidbody>().velocity = BulletSpawn.forward * bulletSpeed * Time.deltaTime;
+            audioSource.Play();
         }
     }
+
 }

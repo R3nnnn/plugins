@@ -16,8 +16,5 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
-    private void Update()
-    {
-        //Poner que cuando el guardián detecte al jugador, la música cambie a musicSource.clip = music[1]
-    }
+    
 }
