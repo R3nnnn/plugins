@@ -17,7 +17,7 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetMouseButtonDown(0))
         {
             GameObject bullet = Instantiate(bulletPrefab, BulletSpawn.position, BulletSpawn.rotation);
             bullet.GetComponent<Rigidbody>().velocity = BulletSpawn.forward * bulletSpeed * Time.deltaTime;
