@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOveSimon.unity
     guid: c4ca7f5b5f0b90e4987d95f535fa5087
+  - enabled: 1
+    path: Assets/Scenes/BossFight.unity
+    guid: 632d5ca14fe531647bf294c92b0fd00d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

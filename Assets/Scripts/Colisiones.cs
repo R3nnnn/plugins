@@ -14,6 +14,7 @@ public class Colisiones : MonoBehaviour
 
         if (other.gameObject.name == "Monstruo" || other.gameObject.name == "Monstruo (1)" || other.gameObject.name == "Monstruo (2)" /*|| other.gameObject.name == "Monstruo (3)" || other.gameObject.name == "Monstruo (4)"*/)
         {
+            PlayScore.contador = 0;
             SceneManager.LoadScene(3);
         }
     }
